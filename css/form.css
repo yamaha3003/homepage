@@ -36,7 +36,9 @@
     border-radius: 5px;
     padding: 20px;
     margin: 25px 0;
+    background-color: rgba(255, 255, 255, 0.738);
     color: #193737
+
 }
 
 .form__legend {
