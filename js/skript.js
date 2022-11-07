@@ -1,15 +1,27 @@
-console.log("Hello my frend")
-let sumElement = document.querySelector(".js-sum");
-let resultElement = document.querySelector(".js-result");
-let formElement = document.querySelector(".js-form");
-let currencyElement = document.querySelector(".js-currency");
+{
+    const updateResultText = (result) => {
+        const resultElement = document.querySelector(".js-result");
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+        resultElement.innerText = result.toFixed(2);
+    }
 
-    let sum = sumElement.value;
-    let currency = currencyElement.value;
-    let result = sum / currency;
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-    resultElement.innerText = result.toFixed(2);
-})
+        const sumElement = document.querySelector(".js-sum");
+        const currencyElement = document.querySelector(".js-currency");
+
+        const sum = sumElement.value;
+        const currency = currencyElement.value;
+        const result = sum / currency;
+
+        updateResultText(result);
+    }
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", onFormSubmit)
+    }
+    init();
+}
